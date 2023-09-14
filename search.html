@@ -6,22 +6,11 @@
 	<title>Search</title>
 </head>
 <body>
-	<form>
+	<form action="pokemon.html" autocomplete="off">
 		<label>
 			Søg
-			<select>
-				<option>Pokemon</option>
-				<option>Types</option>
-				<option>Abilities</option>
-			</select>
-			<input type="search" list="browsers">
-			<datalist id="browsers">
-				<option>Firefox</option>
-				<option>Chrome</option>
-				<option>Edge</option>
-				<option>Opera</option>
-				<option>Safari</option>
-			</datalist>
+			<input type="search" name="name" list="pokemons" class="pokemon__search">
+			<datalist id="pokemons"></datalist>
 		</label>
 		<button type="submit">Søg</button>
 	</form>

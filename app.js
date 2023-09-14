@@ -5,11 +5,9 @@ const PREV_PAGE = document.querySelector(".prevPage")
 
 fetch(`https://pokeapi.co/api/v2/pokemon?offset=${OFFSET}`)
 	.then(function(response) {
-		if (response.status === 200) {
-			return response.json()
-		} else {
-			document.body.innerText += "Ups, noget gik galt. Prøv igen senere."
-		}
+		if (response.status !== 200)
+			throw new Error("fejlbesked")
+		return response.json()
 	})
 	.then(function(data) {
 		
@@ -27,4 +25,8 @@ fetch(`https://pokeapi.co/api/v2/pokemon?offset=${OFFSET}`)
 			LI.innerHTML = `<a class="pokeList__link" href="/pokemon.html?name=${result.name}">${result.name}</a>`
 			UL.append(LI)
 		})
+	})
+	.catch(function(error) {
+		console.log(error)
+		window.location.href = "/ups.html?message=" + error.message
 	})
