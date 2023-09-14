@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Search</title>
+</head>
+<body>
+	<form>
+		<label>
+			Søg
+			<select>
+				<option>Pokemon</option>
+				<option>Types</option>
+				<option>Abilities</option>
+			</select>
+			<input type="search" list="browsers">
+			<datalist id="browsers">
+				<option>Firefox</option>
+				<option>Chrome</option>
+				<option>Edge</option>
+				<option>Opera</option>
+				<option>Safari</option>
+			</datalist>
+		</label>
+		<button type="submit">Søg</button>
+	</form>
+	<script src="/search.js" defer></script>
+</body>
+</html>
